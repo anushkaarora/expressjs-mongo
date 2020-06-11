@@ -28,7 +28,7 @@ RUN echo "deb [arch=amd64] http://repo.mongodb.org/apt/ubuntu bionic/mongodb-org
 
 RUN apt update
 
-RUN apt install mongodb
+RUN apt install mongodb-org
 
 # it will bundle the app source code in the docker image
 
