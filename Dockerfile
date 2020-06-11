@@ -18,9 +18,16 @@ COPY package*.json ./
 
 RUN npm install 
 
-RUN wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -
+RUN echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
 
-RUN apt-get install -y mongodb
+
+RUN apt-get update
+
+RUN apt-get install -y mongodb-org
+
+RUN systemctl enable mongod
+
+RUN systemctl start mongod
 
 # it will bundle the app source code in the docker image
 
