@@ -4,7 +4,7 @@
   "description": "An app to connect mongodb with expressjs",
   "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "api",
@@ -20,6 +20,8 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "http-errors": "~1.6.3",
-    "mongodb": "^3.5.4"
+    "mongodb": "^3.5.4",
+    "monk": "^7.1.2",
+    "morgan": "~1.9.1"
   }
 }
