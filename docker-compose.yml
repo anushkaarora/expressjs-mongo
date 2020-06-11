@@ -1,17 +1,13 @@
-version: "2"
+version: "3.7"
 services:
-  app:
+  mongodb:
     container_name: express
-    restart: always
-    build: .
     ports:
-      - "8080:8080"
-    links:
-      - mongo
-  mongo:
-    container_name: mongo
-    image: mongo
-    volumes:
-      - ./data:/data/db
+      - '27017:27017'
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express
+    depends_on:
+      - mongodb
     ports:
-      - "db:27017"
+      - '8080:8080'
