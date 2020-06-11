@@ -27,4 +27,4 @@ EXPOSE 8080
 
 # start our dockerized server, similar to command  "node index"
 
-CMD ["npm", "start"] 
+CMD ["node", "index"] 
