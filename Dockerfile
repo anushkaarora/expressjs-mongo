@@ -18,8 +18,7 @@ COPY package*.json ./
 
 RUN npm install 
 
-
-RUN apt-get install -y mongodb-org
+RUN apt-get install -y mongodb
 
 # it will bundle the app source code in the docker image
 
