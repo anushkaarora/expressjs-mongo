@@ -5,7 +5,7 @@ services:
     restart: always
     build: .
     ports:
-      - "3000:3000"
+      - "8080:8080"
     links:
       - mongo
   mongo:
@@ -14,4 +14,4 @@ services:
     volumes:
       - ./data:/data/db
     ports:
-      - "27017:27017"
+      - "express-dev-service:27017"
