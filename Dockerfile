@@ -18,7 +18,9 @@ COPY package*.json ./
 
 RUN npm install 
 
+RUN rm -rf /etc/apt/sources.list.d/mongodb*.list
 
+RUN apt update
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 
