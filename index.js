@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://mongo-d-dev-mongodb-replicaset:27017', { useNewUrlParser: true});
+mongoose.connect('mongodb://172.31.185.198:27017', {useNewUrlParser: true, useUnifiedTopology: true});
 var db = mongoose.connection;
 
 // Added check for DB connection
