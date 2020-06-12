@@ -15,8 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://mongo-db-dev-mongodb-replicaset-client:27017/resthub',{ useNewUrlParser: true });
-
+mongoose.connect('mongodb://mongo-db-dev-mongodb-replicaset-client:27017/resthub', { useNewUrlParser: true});
 var db = mongoose.connection;
 
 // Added check for DB connection
@@ -28,7 +27,7 @@ else
 // Setup server port
 var port = process.env.PORT || 8080;
 
-// Send message for default URLs
+// Send message for default URL
 app.get('/', (req, res) => res.send('Hello World with Express'));
 
 // Use Api routes in the App
