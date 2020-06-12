@@ -2,11 +2,15 @@
 let express = require('express');
 // Import Body parser
 let bodyParser = require('body-parser');
-// Import Mongoose
-let mongoose = require('mongoose');
+
 // Initialise the app
 let app = express();
 
+const config = require('./db');
+
+const PORT = 8080;
+
+const client = mongodb.MongoClient;
 // Import routes
 let apiRoutes = require("./api-routes");
 // Configure bodyparser to handle post requests
@@ -15,17 +19,15 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://mongo-db-dev-mongodb-replicaset-client:27017/resthub', { useNewUrlParser: true});
-var db = mongoose.connection;
+client.connect(config.DB, function(err, db) {
+    if(err) {
+        console.log('database is not connected')
+    }
+    else {
+        console.log('connected!!')
+    }
+});
 
-// Added check for DB connection
-if(!db)
-    console.log("Error connecting db")
-else
-    console.log("Db connected successfully")
-
-// Setup server port
-var port = process.env.PORT || 8080;
 
 // Send message for default URL
 app.get('/', (req, res) => res.send('Hello World with Express'));
