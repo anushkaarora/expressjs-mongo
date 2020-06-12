@@ -17,6 +17,8 @@ app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
 mongoose.connect('mongodb://mongo-db-dev-mongodb-replicaset-client:27017/resthub',{ useNewUrlParser: true });
 
+var db = mongoose.connection;
+
 // Added check for DB connection
 if(!db)
     console.log("Error connecting db")
