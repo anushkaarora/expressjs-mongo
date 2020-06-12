@@ -19,5 +19,7 @@ router.route('/contacts/:contact_id')
     .patch(contactController.update)
     .put(contactController.update)
     .delete(contactController.delete);
-// Export API routes
-module.exports = router;
+
+module.exports = {
+    DB: 'mongodb://mongo-db-dev-mongodb-replicaset-client:27017/resthub'
+}
