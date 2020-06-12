@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
+mongoose.connect('mongo-d-dev-mongodb-replicaset', { useNewUrlParser: true});
 var db = mongoose.connection;
 
 // Added check for DB connection
