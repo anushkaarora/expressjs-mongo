@@ -15,10 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose
-  .connect(
-    'mongodb://anushka:password@mongo-db-dev-mongodb-replicaset:27017/resthub',
-    { useNewUrlParser: true };
+mongoose.connect('mongodb://mongo-db-dev-mongodb-replicaset-client:27017/resthub',{ useNewUrlParser: true });
 
 // Added check for DB connection
 if(!db)
